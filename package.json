@@ -1,0 +1,22 @@
+{
+  "name": "my-ele1",
+  "description": "Webcomponent my-ele1 following open-wc recommendations",
+  "license": "MIT",
+  "author": "my-ele1",
+  "version": "0.0.0",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "lit": "^2.0.0"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.17",
+    "@web/dev-server": "^0.1.24"
+  },
+  "customElements": "custom-elements.json"
+}

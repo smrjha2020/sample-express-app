@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #071658;
+    }
+    table, th, td 
+      {
+          border: solid 1px #f7f5f5;
+          border-collapse: collapse;
+          padding: 2px 3px;
+          text-align: center;
+      }
+  
+  
+
+  </style>
+</head>
+
+<body>
+
+ <div id="demo"></div>
+
+   <script type="module"> // path of javascript not given as html is in same folder
+   // Import Lit elements
+     import { html, render } from 'lit';
+     import '../my-ele1.js';
+
+     const title = 'Hello  World! This is const Title from index.html';    
+    /*fetch("/src/employee.json").then(function(data){debugger})
+   var my_array = JSON.stringify(this.employeeDetails)*/
+
+
+// Fetch the Employee info from purnata labs on erpnext.com. Get the response.json file. First step
+// is to test the http connection
+
+let erpUrl = 'http://localhost:3000/employees' ;
+
+// display type of data fetched
+// alert(response.headers.get('Content-Type')); 
+
+  fetch(erpUrl)
+  .then(response => response.json()) 
+  //value of response.json() stored in response
+  //value of render() stored in data. => is called arrow function
+  //my-ele1 is the lit element
+
+  .then(data => { 
+                  render(html`
+  
+                         <my-ele1 .title=${title} .employeeDetails=${data}>
+                          
+     
+                           some light-dom
+          
+                         </my-ele1> `,
+
+                          document.querySelector('#demo') ); 
+                }
+
+        );     
+
+      
+
+   
+  </script>
+
+ 
+  <script>
+// Now experimenting with employee_db_2
+//If src is set, the script content is ignored.
+
+
+
+
+
+  </script>
+   
+   
+   
+  
+
+
+
+
+
+
+</body>
+</html>
